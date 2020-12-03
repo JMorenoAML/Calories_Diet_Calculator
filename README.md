@@ -16,4 +16,11 @@ The goals are:
 4) As optional, it could check those raw materials, and find recipes that use it to make a higher level suggestion.
 
 
+But most important is:
+Learn what to commit, how to commit, when to commit.
+How to organize a project in Github, best practices.
+How to collaborate on Github. Practice branching and its best practices.
+Do it all, following PEP8.
+
+
 
