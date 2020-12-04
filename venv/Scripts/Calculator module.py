@@ -22,9 +22,9 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
     print("I need some data from before we prepare your ideal Diet")
     ####### AGE 1/5 #######
     while True:
-        try:
-            new_user.age = input("How old are you? (in years, numerical)")
-        if (not (type(new_user.age) == int) or (new_user.age <= 0)):
+        new_user.age = input("How old are you? (in years, numerical)")
+
+        if type(new_user.age) != int or new_user.age >= 0:
             print("Please write it again, this time as positive integer numerical value")
             print(" For example:  24  ")
             continue
@@ -32,8 +32,7 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
             break
     ####### GENDER 2/5 #######
     while True:
-        try:
-            gender_dummy = input("Are you female or male? 1 = male, 0 = female")
+        gender_dummy = input("Are you female or male? 1 = male, 0 = female")
         if ((gender_dummy != 1) or (gender_dummy != 0)):
             print("Please write 0 for female, or 1 for male")
             print("Try again!")
@@ -45,12 +44,21 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
 
             new_user.gender == "female"
             break
+    return new_user
 
-    while True:
-        try:
-            new_user.size
+print("tus datos de entrada son:")
+print(new_user.age," years old"\n," your gender is ", new_user.gender)
 
-    gender = input('Is your gender is male, write 1. For female write 2: ')
-    weight = int(input('What is your weight: '))
-    height = int(input('What is your height in inches: '))
+#####TEST ZONE
+
+take_user_info = user_info_retriever
+
+
+    # while True:
+    #     try:
+    #         new_user.size
+    #
+    # gender = input('Is your gender is male, write 1. For female write 2: ')
+    # weight = int(input('What is your weight: '))
+    # height = int(input('What is your height in inches: '))
 
