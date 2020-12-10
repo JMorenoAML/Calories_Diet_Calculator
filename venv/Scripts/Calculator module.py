@@ -11,9 +11,10 @@ EXERCISE DONE (We can aproximate Cals depending on kind and duration of sport, a
 OR, CALORIES BURNT (or we can directly input the burnt calories every day, integer)
 '''
 
-from model import User
+from model.User import User   # we do FROM Folder.folder. ... script IMPORT class
 
 new_user = User()
+
 
 def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de google con translate.
     print("Welcome to Diet&Calories calculator")
@@ -47,11 +48,13 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
     return new_user
 
 print("tus datos de entrada son:")
-print(new_user.age," years old"\n," your gender is ", new_user.gender)
+print(new_user.age," years old\nyour gender is ", new_user.gender)
 
 #####TEST ZONE
 
 take_user_info = user_info_retriever
+
+
 
 
     # while True:
