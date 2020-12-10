@@ -82,14 +82,34 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
     # maybe nested functions?? Also I need a way to not allow someone already registered and with an assigned ID,
     # registering again (this would create duplicated entries )
 
+# Benedict-Harris Formula:
+
+#
+# man
+# BMR_std = (10*new_user.weigth) + (6.25*new_user.heigth) - (5*new_user.age)
+# if new_user.gender == "male":
+#     BMR_man = BMR_std + 5
+# else:
+
+#     BMR_woman = BMR_std - 161
 
 print("Ok ",new_user.alias," your data is:")
 print("you are ",str(new_user.age)," years old and your gender is ", new_user.gender)
 print("your weigth is ",str(new_user.weight)," Kgs and your size is ",str(new_user.size)," cms "
+if new_user.gender == "male":
+    print("you caloric use is ",BMR_man, " Kcal/day")         # Find a way to look for BMR_man, if found print it,
+else:                                                           # if not found, print BMR_woman (save this comparer)
+    print("you caloric use is ",BMR_woman, " Kcal/day")
+
+
+
+
 
 #####TEST ZONE
 
 take_user_info = user_info_retriever
+
+
 
 
 
