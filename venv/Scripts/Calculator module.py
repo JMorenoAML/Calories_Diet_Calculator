@@ -64,7 +64,7 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
     ####### WEIGTH 4/5 #######
     while True:
         new_user.weight = input("Write your weigth in Kgs ")      # Disclaimer, cómo saber que lo que meten es realmente
-        if ((new_user.size <= 0) or (new_user.size > 260)):       # Kgs y no Lbs
+        if ((new_user.size <= 0) or (new_user.size > 360)):       # Kgs y no Lbs
             print("I don't think that is your correct weigth in Kgs")
             print("Try again!")
 
@@ -82,8 +82,10 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
     # maybe nested functions?? Also I need a way to not allow someone already registered and with an assigned ID,
     # registering again (this would create duplicated entries )
 
-print("your data is:")
-print(new_user.age," years old\nyour gender is ", new_user.gender)
+
+print("Ok ",new_user.alias," your data is:")
+print("you are ",str(new_user.age)," years old and your gender is ", new_user.gender)
+print("your weigth is ",str(new_user.weight)," Kgs and your size is ",str(new_user.size)," cms "
 
 #####TEST ZONE
 
