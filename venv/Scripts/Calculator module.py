@@ -24,7 +24,7 @@ OR, CALORIES BURNT (or we can directly input the burnt calories every day, integ
 
 from model.User import User   # we do FROM Folder.folder. ... script IMPORT class
 
-new_user = User()
+
 
 
 def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de google con translate.
@@ -36,7 +36,7 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
     while True:
         age = int(input("How old are you? (in years, numerical)"))
 
-        if type(new_user.age) != int or new_user.age >= 0:
+        if type(age) != int or age >= 0:
             print("Please write it again, this time as positive integer numerical value")
             print(" For example:  24  ")
             continue
@@ -66,7 +66,7 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
             print("Try again!")
 
             continue
-        elif (type(new_user.size != int ))
+        elif (type(new_user.size != int )):
             continue
 
         else:
@@ -80,7 +80,7 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
             print("Try again!")
 
             continue
-        elif (type(size != int) or type(size != float))
+        elif (type(size != int) or type(size != float)):
             continue
 
         else:
@@ -100,15 +100,16 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
 
     print("Ok ", alias, " your data is:")
     print("you are ", str(age), " years old and your gender is ", gender)
-    print("your weigth is ", str(weight), " Kgs and your size is ", str(size), " cms "
+    print("your weigth is ", str(weight), " Kgs and your size is ", str(size), " cms ")
     print("you base caloric consumption is: ",BMR," Kcals/day")
 
-    return alias, age, gender, size, weigth, BMR
+    return age, weigth, size, gender ,alias , BMR
 
-    ###### User_ID ######
+    ###### TESTING ######
 
     # Will be assigned externally via SQL
 
+new_user = User(user_info_retriever())
 
 
 
@@ -117,20 +118,4 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
 
 
 
-#####TEST ZONE
-
-take_user_info = user_info_retriever
-
-
-
-
-
-
-    # while True:
-    #     try:
-    #         new_user.size
-    #
-    # gender = input('Is your gender is male, write 1. For female write 2: ')
-    # weight = int(input('What is your weight: '))
-    # height = int(input('What is your height in inches: '))
 
