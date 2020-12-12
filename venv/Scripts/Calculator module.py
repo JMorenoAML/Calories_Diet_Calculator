@@ -29,12 +29,12 @@ new_user = User()
 
 def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de google con translate.
     print("Welcome to Diet&Calories calculator")
-    User.alias = input('What is your name?')
-    print("Nice to meet you {}".format(new_user.alias))
+    alias = input('What is your name?')
+    print("Nice to meet you {}".format(alias))
     print("I need some data from before we prepare your ideal Diet")
     ####### AGE 1/5 #######
     while True:
-        new_user.age = int(input("How old are you? (in years, numerical)"))
+        age = int(input("How old are you? (in years, numerical)"))
 
         if type(new_user.age) != int or new_user.age >= 0:
             print("Please write it again, this time as positive integer numerical value")
@@ -50,18 +50,18 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
             print("Try again!")
             continue
         elif (gender_dummy == 1):
-            new_user.gender == "male"
+            gender == "male"
             break
         else:
 
-            new_user.gender == "female"
+            gender == "female"
             break
     return new_user
 
     ####### SIZE 3/5 #######
     while True:
-        new_user.size = int(input("Write your size in cms (integer value)"))
-        if ((new_user.size <=0) or (new_user.size > 260)):
+        size = int(input("Write your size in cms (integer value)"))
+        if ((size <=0) or (size > 260)):
             print("I don't think that is your correct heigth in cms")
             print("Try again!")
 
@@ -74,32 +74,34 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
 
     ####### WEIGTH 4/5 #######
     while True:
-        new_user.weight = input("Write your weigth in Kgs ")      # Disclaimer, cómo saber que lo que meten es realmente
-        if ((new_user.size <= 0) or (new_user.size > 360)):       # Kgs y no Lbs
+        weight = input("Write your weigth in Kgs ")      # Disclaimer, cómo saber que lo que meten es realmente
+        if ((size <= 0) or (size > 360)):       # Kgs y no Lbs
             print("I don't think that is your correct weigth in Kgs")
             print("Try again!")
 
             continue
-        elif (type(new_user.size != int) or type(new_user.size != float))
+        elif (type(size != int) or type(size != float))
             continue
 
         else:
             break
 
+    ###### Benedict-Harris Formula: #######
+
+    BMR_std = (10*new_user.weigth) + (6.25*new_user.heigth) - (5*new_user.age)
+    if new_user.gender == "male":
+        BMR_man = BMR_std + 5
+        BMR = BMR_man
+    else:
+
+        BMR_woman = BMR_std - 161
+        BMR = BMR_woman
+    return alias, age, gender, size, weigth, BMR
     ###### User_ID ######
 
     # Will be assigned externally via SQL
 
-# Benedict-Harris Formula:
 
-#
-# man
-# BMR_std = (10*new_user.weigth) + (6.25*new_user.heigth) - (5*new_user.age)
-# if new_user.gender == "male":
-#     BMR_man = BMR_std + 5
-# else:
-
-#     BMR_woman = BMR_std - 161
 
 print("Ok ",new_user.alias," your data is:")
 print("you are ",str(new_user.age)," years old and your gender is ", new_user.gender)
