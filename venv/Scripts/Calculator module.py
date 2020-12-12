@@ -61,12 +61,13 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
     ####### SIZE 3/5 #######
     while True:
         size = int(input("Write your size in cms (integer value)"))
+
         if ((size <=0) or (size > 260)):
             print("I don't think that is your correct heigth in cms")
             print("Try again!")
 
             continue
-        elif (type(size != int )):
+        elif (type(size) != int ):
             continue
 
         else:
@@ -74,13 +75,13 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
 
     ####### WEIGTH 4/5 #######
     while True:
-        weight = input("Write your weigth in Kgs ")      # Disclaimer, cómo saber que lo que meten es realmente
+        weight = int(input("Write your weigth in Kgs "))      # Disclaimer, cómo saber que lo que meten es realmente
         if ((size <= 0) or (size > 360)):       # Kgs y no Lbs
             print("I don't think that is your correct weigth in Kgs")
             print("Try again!")
 
             continue
-        elif (type(size != int) or type(size != float)):
+        elif (type(size) != int):
             continue
 
         else:
@@ -88,26 +89,25 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
 
     ###### Benedict-Harris Formula: #######
 
-    BMR_std = (10*new_user.weigth) + (6.25*new_user.heigth) - (5*new_user.age)
-    if new_user.gender == "male":
+    BMR_std = (10*weight) + (6.25*size) - (5*age)
+    if gender == "male":
         BMR_man = BMR_std + 5
         BMR = BMR_man
     else:
-
         BMR_woman = BMR_std - 161
         BMR = BMR_woman
 
+    print("Ok",alias,"our data is:")
+    print("you are", str(age), "years old and your gender is", gender)
+    print("your weigth is", str(weight), "Kgs and your size is", str(size), "cms ")
+    print("you base caloric consumption is: ",BMR,"Kcals/day")
 
-    print("Ok ", alias, " your data is:")
-    print("you are ", str(age), " years old and your gender is ", gender)
-    print("your weigth is ", str(weight), " Kgs and your size is ", str(size), " cms ")
-    print("you base caloric consumption is: ",BMR," Kcals/day")
-
-    return age, weigth, size, gender ,alias , BMR
+    return age, weight, size, gender ,alias , BMR
 
     ###### TESTING ######
 
-    # Will be assigned externally via SQL
+    # user_ID Will be assigned externally via SQL
+#user_info_retriever()   <--- works fine
 
 new_user = User(user_info_retriever())
 
