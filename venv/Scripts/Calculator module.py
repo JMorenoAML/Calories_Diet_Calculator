@@ -36,7 +36,7 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
     while True:
         age = int(input("How old are you? (in years, numerical)"))
 
-        if type(age) != int or age >= 0:
+        if type(age) != int or age <= 0:
             print("Please write it again, this time as positive integer numerical value")
             print(" For example:  24  ")
             continue
@@ -45,18 +45,18 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
     ####### GENDER 2/5 #######
     while True:
         gender_dummy = int(input("Are you female or male? 1 = male, 0 = female"))
-        if ((gender_dummy != 1) or (gender_dummy != 0)):
+        if ((gender_dummy != 1) and (gender_dummy != 0)):
             print("Please write 0 for female, or 1 for male")
             print("Try again!")
             continue
         elif (gender_dummy == 1):
-            gender == "male"
+            gender = "male"
             break
         else:
 
-            gender == "female"
+            gender = "female"
             break
-    return new_user
+
 
     ####### SIZE 3/5 #######
     while True:
@@ -66,7 +66,7 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
             print("Try again!")
 
             continue
-        elif (type(new_user.size != int )):
+        elif (type(size != int )):
             continue
 
         else:
