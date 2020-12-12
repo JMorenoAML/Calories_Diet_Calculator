@@ -96,20 +96,22 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
 
         BMR_woman = BMR_std - 161
         BMR = BMR_woman
+
+
+    print("Ok ", alias, " your data is:")
+    print("you are ", str(age), " years old and your gender is ", gender)
+    print("your weigth is ", str(weight), " Kgs and your size is ", str(size), " cms "
+    print("you base caloric consumption is: ",BMR," Kcals/day")
+
     return alias, age, gender, size, weigth, BMR
+
     ###### User_ID ######
 
     # Will be assigned externally via SQL
 
 
 
-print("Ok ",new_user.alias," your data is:")
-print("you are ",str(new_user.age)," years old and your gender is ", new_user.gender)
-print("your weigth is ",str(new_user.weight)," Kgs and your size is ",str(new_user.size)," cms "
-if new_user.gender == "male":
-    print("you caloric use is ",BMR_man, " Kcal/day")         # Find a way to look for BMR_man, if found print it,
-else:                                                           # if not found, print BMR_woman (save this comparer)
-    print("you caloric use is ",BMR_woman, " Kcal/day")
+
 
 
 
