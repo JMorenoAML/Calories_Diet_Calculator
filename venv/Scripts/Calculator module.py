@@ -7,7 +7,18 @@ WEIGHT float, kg
 SIZE float, cm
 GENDER cathegorical, Man/woman
 DIET GOAL (Cathegorical [for user], making it range on several intervals from -20 to +20% over Calories needed [float]
+    { Let's define some intervals and cathegories, % applied over base BMR}
+     Higher Weigth loss = -20%
+     Normal Weigth loss = -10%
+     Ligth weigth loss = -5%
+     Keep this weigth = 0% (no changes)
+     Ligth weigth gain = +5%
+     Normal weigth gain = +10%
+     Higher weigth gain = +20%
+     
 EXERCISE DONE (We can aproximate Cals depending on kind and duration of sport, as tables, integer)
+    { Let's define some intervals: 
+     TO do later, go on with coding 
 OR, CALORIES BURNT (or we can directly input the burnt calories every day, integer)
 '''
 
@@ -77,10 +88,7 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
 
     ###### User_ID ######
 
-    # Still got no clear if I want to have this inside this function, or be called externally
-    # the idea is this ID is unique, and must be incremented every time the function is called.
-    # maybe nested functions?? Also I need a way to not allow someone already registered and with an assigned ID,
-    # registering again (this would create duplicated entries )
+    # Will be assigned externally via SQL
 
 # Benedict-Harris Formula:
 
