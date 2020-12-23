@@ -22,6 +22,7 @@ EXERCISE DONE (We can aproximate Cals depending on kind and duration of sport, a
 OR, CALORIES BURNT (or we can directly input the burnt calories every day, integer)
 '''
 
+
 from model.User import User   # we do FROM Folder.folder. ... script IMPORT class
 
 
@@ -43,19 +44,21 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
         else:
             break
     ####### GENDER 2/5 #######
+    gender = ""
     while True:
-        gender_dummy = int(input("Are you female or male? 1 = male, 0 = female"))
-        if ((gender_dummy != 1) and (gender_dummy != 0)):
+        gender_dummy = input("Are you female or male? 1 = male, 0 = female")
+        if (gender_dummy == "1"):
+            gender = "male"
+            break
+        elif (gender_dummy == "0"):
+            gender = "female"
+            break
+        else:
             print("Please write 0 for female, or 1 for male")
             print("Try again!")
             continue
-        elif (gender_dummy == 1):
-            gender = "male"
-            break
-        else:
 
-            gender = "female"
-            break
+
 
 
     ####### SIZE 3/5 #######
