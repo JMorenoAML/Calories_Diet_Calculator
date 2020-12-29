@@ -14,7 +14,7 @@ class DBCreator():
         engine = create_engine('sqlite:///memory.db', echo=True)
         Base = declarative_base(bind=engine)
 
-        class FoodPrueba(Base):
+        class Food(Base):
             __tablename__ = 'food'
 
             id = Column(String, primary_key=True)
@@ -24,7 +24,7 @@ class DBCreator():
             fat = Column(Float)
             protein = Column(Float)
 
-        FoodPrueba.__table__.create(bind=engine, checkfirst=True)
+        Food.__table__.create(bind=engine, checkfirst=True)
 
         food_list = []
 
@@ -57,7 +57,7 @@ class DBCreator():
         session = Session()
 
         for food in food_list:
-            row = FoodPrueba(**food)
+            row = Food(**food)
             session.add(row)
 
         session.commit()
