@@ -16,16 +16,19 @@ DIET GOAL (Cathegorical [for user], making it range on several intervals from -2
      Normal weigth gain = +10%
      Higher weigth gain = +20%
      
+     Hacer un diccionario key-value con lo que el user pulsa como key, y el % a aplicar como value
+     
 EXERCISE DONE (We can aproximate Cals depending on kind and duration of sport, as tables, integer)
     { Let's define some intervals: 
      TO do later, go on with coding 
 OR, CALORIES BURNT (or we can directly input the burnt calories every day, integer)
 '''
-
+# la funcion Harris debe recibir un tipo usuario.
 
 from model.User import User   # we do FROM Folder.folder. ... script IMPORT class
 
-
+# forma 1: crear clase user, y crearle el método harris-benedict para poder aplicarlo al self.
+# forma 2: metodo de la clase calculadora, que recibe un objeto "usuario". <- esto mejor
 
 
 def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de google con translate.
@@ -34,11 +37,12 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
     print("Nice to meet you {}".format(alias))
     print("I need some data from before we prepare your ideal Diet")
     ####### AGE 1/5 #######
+    age =""
     while True:
-        age = int(input("How old are you? (in years, numerical)"))
+        age = input("How old are you? (in years, numerical)")  #esto aqui ahora mismo es un string
 
-        if type(age) != int or age <= 0:
-            print("Please write it again, this time as positive integer numerical value")
+        if type(age) != float or age <= 0 :
+            print("Please write it again, this time as positive i numerical value")
             print(" For example:  24  ")
             continue
         else:
