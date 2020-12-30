@@ -6,6 +6,6 @@ class User:
         self.size = size
         self.gender = gender
         self.alias = alias
-        self.BMR = BMR
+
 
 
