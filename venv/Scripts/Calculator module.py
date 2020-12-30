@@ -116,12 +116,7 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
 
     return age, weight, size, gender ,alias
 
-    ###### TESTING ######
-
-    # user_ID Will be assigned externally via SQL
-#user_info_retriever()   <--- works fine
-
-new_user = User(user_info_retriever())
+ 
 
 
 
