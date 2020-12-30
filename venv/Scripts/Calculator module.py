@@ -69,9 +69,6 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
             print("Try again!")
             continue
 
-
-
-
     ####### SIZE 3/5 #######
     while True:
         try:
@@ -116,7 +113,7 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
 
     return age, weight, size, gender ,alias
 
- 
+
 
 
 
