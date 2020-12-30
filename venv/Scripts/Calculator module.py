@@ -114,6 +114,12 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
     return age, weight, size, gender ,alias
 
 
+Usuario = User(user_info_retriever())  # <---- aqui ha de venir la logica que asocia a este user con una entrada unica de
+                                        # la BBDD de SQL
+
+
+
+
 
 
 
