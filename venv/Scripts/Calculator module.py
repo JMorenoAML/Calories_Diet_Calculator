@@ -39,18 +39,25 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
     ####### AGE 1/5 #######
     age =""
     while True:
-        age = input("How old are you? (in years, numerical)")  #esto aqui ahora mismo es un string
+        try:
+            age = float(input("How old are you? (in years, numerical) "))  #esto aqui ahora mismo es un string
 
-        if type(age) != float or age <= 0 :
-            print("Please write it again, this time as positive i numerical value")
-            print(" For example:  24  ")
-            continue
-        else:
-            break
+            if type(age) != float or age <= 0 :
+                print("Please write it again, this time as positive and numerical value")
+                print(" For example:  24  ")
+                continue
+            elif age > 120:
+                print("You are too old to be using this! Rewrite your age properly :)")
+                continue
+            else:
+                break
+        except ValueError:
+            print("Oops!  That was no valid number.  Try again...")
+
     ####### GENDER 2/5 #######
     gender = ""
     while True:
-        gender_dummy = input("Are you female or male? 1 = male, 0 = female")
+        gender_dummy = input("Are you female or male? 1 = male, 0 = female ")
         if (gender_dummy == "1"):
             gender = "male"
             break
@@ -67,33 +74,38 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
 
     ####### SIZE 3/5 #######
     while True:
-        size = int(input("Write your size in cms (integer value)"))
+        try:
+            size = float(input("Write your size in cms "))
 
-        if ((size <=0) or (size > 260)):
-            print("I don't think that is your correct heigth in cms")
-            print("Try again!")
+            if ((size <=0) or (size > 260)):
+                print("I don't think that is your correct heigth in cms")
+                print("Try again!")
 
-            continue
-        elif (type(size) != int ):
-            continue
+                continue
+            elif (type(size) != float):
+                continue
 
-        else:
-            break
+            else:
+                break
+        except ValueError:
+            print("Oops!  That was no valid number.  Try again...")
 
     ####### WEIGTH 4/5 #######
     while True:
-        weight = int(input("Write your weigth in Kgs "))      # Disclaimer, cómo saber que lo que meten es realmente
-        if ((size <= 0) or (size > 360)):       # Kgs y no Lbs
-            print("I don't think that is your correct weigth in Kgs")
-            print("Try again!")
+        try:
+            weight = float(input("Write your weigth in Kgs "))      # Disclaimer, cómo saber que lo que meten es realmente
+            if ((weight <= 0) or (weight > 360)):       # Kgs y no Lbs
+                print("I don't think that is your correct weigth in Kgs")
+                print("Try again!")
 
-            continue
-        elif (type(size) != int):
-            continue
+                continue
+            elif (type(weight) != float):
+                continue
 
-        else:
-            break
-
+            else:
+                break
+        except ValueError:
+            print("Oops!  That was no valid number.  Try again...")
     ###### Benedict-Harris Formula: #######
 
     BMR_std = (10*weight) + (6.25*size) - (5*age)
