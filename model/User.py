@@ -1,11 +1,7 @@
 class User:
     
-    def __init__(self, age, weight, size, gender, alias, BMR):
-        self.age = age
-        self.weight = weight
-        self.size = size
-        self.gender = gender
-        self.alias = alias
+    def __init__(self, tupla_datos):
+        self.age, self.weight, self.size, self.gender, self.alias = tupla_datos
 
 
 
