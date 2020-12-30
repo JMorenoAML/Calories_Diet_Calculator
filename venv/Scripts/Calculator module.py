@@ -106,22 +106,15 @@ def user_info_retriever():    #nota: hacerlo multilanguage usando spreadsheet de
                 break
         except ValueError:
             print("Oops!  That was no valid number.  Try again...")
-    ###### Benedict-Harris Formula: #######
 
-    BMR_std = (10*weight) + (6.25*size) - (5*age)
-    if gender == "male":
-        BMR_man = BMR_std + 5
-        BMR = BMR_man
-    else:
-        BMR_woman = BMR_std - 161
-        BMR = BMR_woman
+    ###### Summary of User #######
 
     print("Ok",alias,"our data is:")
     print("you are", str(age), "years old and your gender is", gender)
     print("your weigth is", str(weight), "Kgs and your size is", str(size), "cms ")
-    print("you base caloric consumption is: ",BMR,"Kcals/day")
 
-    return age, weight, size, gender ,alias , BMR
+
+    return age, weight, size, gender ,alias
 
     ###### TESTING ######
 
