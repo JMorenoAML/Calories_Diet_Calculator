@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker
 import json
 
 
-class DBCreator():
+class DBCreator:
 
     def initialize(self):
 
